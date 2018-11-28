@@ -16,11 +16,24 @@
 
 $(call inherit-product, device/xiaomi/riva/full_riva.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Check for the target product.
+ifeq (pa_riva,$(TARGET_PRODUCT))
 
-PRODUCT_NAME := lineage_riva
+# Set bootanimation to 720p display.
+TARGET_BOOT_ANIMATION_RES := 720
+
+# Most advanced platform features, first.
+TARGET_WANTS_EXTENDED_DPM_PLATFORM := true
+
+# Inherit from our common CAF device tree.
+include device/qcom/common/common.mk
+
+PRODUCT_DEVICE := riva
+PRODUCT_MODEL := Redmi 5A
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_NAME := pa_riva
 BOARD_VENDOR := Xiaomi
+PRODUCT_BRAND := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -30,3 +43,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Set BUILD_FINGERPRINT variable
 BUILD_FINGERPRINT := "Xiaomi/riva/riva:7.1.2/N2G47H/V9.5.6.0.NCKMIFA:user/release-keys"
 
+# Paranoid Android platform
+include vendor/pa/main.mk
+
+endif
