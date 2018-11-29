@@ -19,12 +19,12 @@ $(call inherit-product, vendor/xiaomi/riva/riva-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    Bluetooth \
-    Settings \
-    SettingsProvider \
-    SystemUI \
-    framework-res \
+#PRODUCT_ENFORCE_RRO_TARGETS := \
+#    Bluetooth \
+#    Settings \
+#    SettingsProvider \
+#    SystemUI \
+#    framework-res \
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
