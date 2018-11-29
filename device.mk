@@ -134,7 +134,6 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -260,8 +259,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+    android.hardware.light@2.0-impl
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -373,8 +371,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@1.0-impl
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
@@ -394,7 +391,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.lineage
+    android.hardware.vibrator@1.0-impl
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
